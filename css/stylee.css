@@ -1,0 +1,134 @@
+/* --- Global Resets --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-color: #f1f1f2; 
+  padding: 30px 15px;
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #282828;
+  margin-bottom: 20px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.product-grid {
+  display: grid;
+  
+  /* Forces exactly 4 equal columns on desktop */
+  grid-template-columns: repeat(3, 1fr) ; 
+  
+  gap: 16px; 
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 15px; /* Gives a little breathing room on the edges */
+}
+
+.phone-card {
+  background-color: #fee2e2;
+  border-radius: 15px; /* Slightly rounded, not too bubbly */
+  padding: 10px;
+  position:relative;
+  transition: transform 0.2s;
+  border: none;
+  
+  /* Flexbox setup to stack elements vertically */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Subtle shadow on hover to look interactive */
+.phone-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 5px 15px plum;
+  border: 1px solid #ffffff;
+}
+
+/* --- Image Section --- */
+.phone-image {
+  width: 100%;
+  height: 180px; /* Fixed height for image area */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  background-color: #ffffff;
+}
+
+.phone-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* Keeps images looking perfect */
+}
+
+/* --- Text & Details (Left-Aligned like Jumia) --- */
+.phone-title {
+  font-size: 0.875rem; /* Smaller text feels more premium */
+  font-weight: 400;
+  color: #282828;
+  line-height: 1.2rem;
+  height: 2.4rem; /* Limits to exactly 2 lines of text */
+  overflow: hidden;
+  margin-bottom: 6px;
+  text-align: left; /* Alignment fixed */
+}
+
+.phone-price {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #282828;
+  margin-bottom: 12px;
+  margin-bottom: 12px;
+  text-align: left; /* Alignment fixed */
+}
+
+
+.buy-btn {
+  margin-top: auto; /* Pushes button to the very bottom */
+  width: 100%;
+  background-color: #f68b1e; /* Jumia's signature Orange color */
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: background-color 0.2s;
+}
+
+.buy-btn:hover {
+  background-color: #e07b12; /* Darker orange on hover */
+}
+
+/* Professional Product Badges */
+.badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background-color: #fee2e2;
+  color: #ef4444; /* Red color scheme for sales/hot promos */
+  padding: 2px 6px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  border-radius: 2px;
+  text-transform: uppercase;
+  z-index: 10;
+}
+
+.hidden {
+  display: none;
+}
